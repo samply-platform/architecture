@@ -1,3 +1,3 @@
 # architecture
 
-![overview](./overview.svg)
+![overview](./overview.png)
