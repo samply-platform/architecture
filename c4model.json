@@ -1,0 +1,92 @@
+{
+  "type": "Container",
+  "scope": "Samply Platform",
+  "description": "The container diagram for the samply platform.",
+  "size": "A3_Landscape",
+
+
+  "elements": [
+    {
+      "type": "Software System",
+      "name": "Samply Platform",
+      "containers": [
+        {
+          "type": "Container",
+          "name": "Catalog-Service",
+          "position": "2905,1604"
+        },
+        {
+          "type": "Container",
+          "name": "Istio-Ingress",
+          "position": "1855,1604"
+        },
+        {
+          "type": "Container",
+          "name": "Kafka Broker",
+          "tags": "Kafka",
+          "position": "3955,1604"
+        }
+      ]
+    },
+    {
+      "type": "Person",
+      "name": "Seller",
+      "description": "sells items on platform",
+      "position": "555,1554"
+    }
+  ],
+
+
+  "relationships": [
+    {
+      "source": "Catalog-Service",
+      "description": "publishes items",
+      "destination": "Kafka Broker",
+      "vertices": [
+        "3655,1754"
+      ]
+    },
+    {
+      "source": "Istio-Ingress",
+      "description": "Gets/Adds/Removes items",
+      "technology": "HTTP with Identity",
+      "destination": "Catalog-Service",
+      "vertices": [
+        "2605,1754"
+      ]
+    },
+    {
+      "source": "Seller",
+      "description": "Gets/Adds/Removes items",
+      "technology": "HTTPS with Auth",
+      "destination": "Istio-Ingress",
+      "vertices": [
+        "1255,1754",
+        "1555,1754"
+      ]
+    }
+  ],
+
+
+  "styles": [
+    {
+      "type": "element",
+      "tag": "Container",
+      "background": "#438dd5",
+      "color": "#ffffff"
+    },
+    {
+      "type": "element",
+      "tag": "Kafka",
+      "background": "#009a68",
+      "shape": "Pipe"
+    },
+    {
+      "type": "element",
+      "tag": "Person",
+      "background": "#08427b",
+      "color": "#ffffff",
+      "shape": "Person"
+    }
+  ]
+}
