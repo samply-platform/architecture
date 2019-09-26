@@ -1,6 +1,5 @@
 # architecture
-
-![overview](./overview.svg)
+![overview](./overview.png)
 
 ## Local Setup
 
@@ -10,7 +9,7 @@ helm init
 helm install codecentric/keycloak --name keycloak --wait
 ```
 
-2. Setup Keycloak
+### Setup Keycloak
 
 * Create realm `samply`
 * Create confidential client `catalog-api`
