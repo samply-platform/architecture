@@ -6,7 +6,10 @@
 ```bash
 minikube start --kubernetes-version v1.15.2
 helm init
-helm install codecentric/keycloak --name keycloak --wait
+helm install --name keycloak \
+    --set keycloak.persistence.deployPostgres=true \
+    --set keycloak.persistence.dbVendor=postgres \
+    codecentric/keycloak --wait
 ```
 
 ### Setup Keycloak
