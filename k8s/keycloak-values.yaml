@@ -1,0 +1,11 @@
+keycloak:
+  persistence:
+    deployPostgres: true
+    dbVendor: postgres
+
+postgresql:
+  persistence:
+    enabled: true
+    existingClaim: postgres-pv-claim
+  volumePermissions:
+    enabled: true
