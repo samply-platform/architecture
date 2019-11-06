@@ -14,7 +14,11 @@ helm install --name keycloak \
   codecentric/keycloak --wait
 
 helm install --name kafka incubator/kafka --wait
-helm install --name kafka-schema-registry --set kafka.enabled="false" --set kafkaStore.overrideBootstrapServers="PLAINTEXT://kafka-headless:9092" incubator/schema-registry --wait
+
+helm install --name kafka-schema-registry \
+  --set kafka.enabled="false" \
+  --set kafkaStore.overrideBootstrapServers="PLAINTEXT://kafka-headless:9092" \
+  incubator/schema-registry --wait
 ```
 
 DONT USE "schema-registry" AS RELEASE NAME!!!!
